@@ -1,0 +1,26 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+
+      Locale.setDefault(Locale.US);
+      Scanner sc = new Scanner(System.in);
+      // variavel de leitura, para continuação dos calculos.
+        char resp = 's';
+
+          do {
+            System.out.print("Digite a temperatura em Celsius: ");
+            double C = sc.nextDouble();
+            double F =  9.0 * C / 5.0 + 32; // soma feita atraves da formula para conversão de graus celcius para Fahrenheit
+            System.out.printf("Equivalente em Fahrenheit: %.1f%n", F);
+      // Após o calculo realizado, é feita a pergunta, se deseja continuar. 
+            System.out.print("Deseja repetir (s/n)? ");
+            resp = sc.next().charAt(0);
+            } while (resp != 'n');
+    // Após responder que nao 'n', é finalizado o algortimo mostrando a msg abaixo
+          System.out.println("Terminou sua aplicação. Obrigado!");
+    
+    sc.close();
+  }
+}
